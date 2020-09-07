@@ -1,13 +1,12 @@
 import {
   OutPoint,
   Script,
-  CellOutput,
   Transaction,
 } from "@ckb-lumos/base/lib/core";
 import { TransactionSkeletonType } from "@ckb-lumos/helpers";
 export interface CkbSimpleAccountConfig {
-  validator: Buffer;
-  generator: Buffer;
+  validator: ArrayBuffer;
+  generator: ArrayBuffer;
   validatorOutpoint: OutPoint;
   typeScript: Script;
   lockScript?: Script;
@@ -15,19 +14,15 @@ export interface CkbSimpleAccountConfig {
 }
 
 export interface SparseMerkleTree {
-  rootHash: Buffer;
+  rootHash: ArrayBuffer;
   leaves: Object;
   branches: Object;
 }
 
 export declare class CkbSimpleAccount {
-  constructor(
-    config: CkbSimpleAccountConfig,
-    tree: SparseMerkleTree,
-    lastCell?: [OutPoint, CellOutput, Buffer]
-  );
+  constructor(config: CkbSimpleAccountConfig);
 
-  generate(program: Buffer): TransactionSkeletonType;
+  generate(program: ArrayBuffer): TransactionSkeletonType;
 
   advance(transaction: Transaction): void;
 
