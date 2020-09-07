@@ -677,9 +677,12 @@ dependencies = [
 name = "simple-account-layer"
 version = "0.1.0"
 dependencies = [
+ "bytes",
  "ckb-simple-account-layer",
+ "ckb-types",
  "neon",
  "neon-build",
+ "sparse-merkle-tree",
 ]
 
 [[package]]

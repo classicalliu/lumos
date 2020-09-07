@@ -17,3 +17,6 @@ neon-build = "0.4.0"
 [dependencies]
 neon = "0.4.0"
 ckb-simple-account-layer = {git = "https://github.com/nervosnetwork/ckb-simple-account-layer", branch = "develop"}
+bytes = "0.5.4"
+sparse-merkle-tree = { git = "https://github.com/jjyr/sparse-merkle-tree", rev = "0e313cf" }
+ckb-types = { git = "https://github.com/nervosnetwork/ckb", tag = "v0.31.0-pre1" }

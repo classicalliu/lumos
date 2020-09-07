@@ -1,8 +1,4 @@
-import {
-  OutPoint,
-  Script,
-  Transaction,
-} from "@ckb-lumos/base/lib/core";
+import { OutPoint, Script, Transaction } from "@ckb-lumos/base/lib/core";
 import { TransactionSkeletonType } from "@ckb-lumos/helpers";
 export interface CkbSimpleAccountConfig {
   validator: ArrayBuffer;
