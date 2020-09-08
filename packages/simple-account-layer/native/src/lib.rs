@@ -25,11 +25,15 @@ pub struct NativeCkbSimpleAccount {
 declare_types! {
     pub class JsNativeCkbSimpleAccount for NativeCkbSimpleAccount {
         init(mut cx) {
+            println!("checked 0");
             let js_config = cx.argument::<JsObject>(0)?;
             // extract config properties and convert to rust type
             // 1. validator
+            println!("checked 1");
             let js_validator = js_config.get(&mut cx, "validator")?.downcast::<JsArrayBuffer>().or_throw(&mut cx)?;
+            println!("checked 2");
             let validator_slice = cx.borrow(&js_validator, |data| { data.as_slice::<u8>().to_vec() });
+            println!("checked 3");
             let validator = Bytes::from(validator_slice);
             // 2. generator
             let js_generator = js_config.get(&mut cx, "generator")?.downcast::<JsArrayBuffer>().or_throw(&mut cx)?;

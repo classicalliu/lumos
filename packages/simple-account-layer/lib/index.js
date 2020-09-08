@@ -1,3 +1,10 @@
-var addon = require("../native");
+var { CkbSimpleAccount: NativeCkbSimpleAccount } = require("../native");
 
-console.log(addon.hello());
+class CkbSimpleAccount {
+  constructor(config) {
+    this.config = config;
+    this.nativeCkbSimpleAccount = new NativeCkbSimpleAccount(config);
+  }
+}
+
+module.exports = { CkbSimpleAccount };
